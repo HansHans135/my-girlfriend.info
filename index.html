@@ -1,9 +1,12 @@
 <!DOCTYPE html>
 <html lang="zh-Hant">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>404 - 女友不存在</title>
+    <title>看看你未來的女朋友?</title>
+    <script defer src="https://view.hans0805.me/script.js"
+        data-website-id="741cd5db-f457-49c7-9a73-d2bf6bbf19fa"></script>
     <style>
         body {
             margin: 0;
@@ -16,48 +19,81 @@
             font-family: Arial, sans-serif;
             text-align: center;
         }
+
         .container {
             max-width: 600px;
             padding: 20px;
         }
+
         h1 {
             font-size: 6rem;
             margin: 0;
             color: #333;
         }
+
         p {
             font-size: 1.2rem;
             color: #666;
             margin: 10px 0 20px;
         }
+
         .contact {
-            font-size: 1rem;
+            font-size: 0.8rem;
             color: #007BFF;
             text-decoration: none;
             display: inline-block;
             margin-top: 20px;
         }
+
+        .smo {
+            font-size: 0.8rem;
+        }
+
         .contact:hover {
             text-decoration: underline;
         }
+
         @media (max-width: 600px) {
             h1 {
                 font-size: 4rem;
             }
+
             p {
                 font-size: 1rem;
             }
+
             .contact {
-                font-size: 0.9rem;
+                font-size: 0.8rem;
+            }
+
+            .smo {
+                font-size: 0.8rem;
             }
         }
     </style>
 </head>
+
 <body>
     <div class="container">
         <h1>404</h1>
-        <p>很抱歉，您想要的女朋友不存在。</p>
-        <p>如果你有感情問題想找人說說，可以<a class="contact" href="mailto:hi@my-girlfriend.info">告訴我們</a>。</p>
+        <p>很抱歉，您想要的女朋友不存在 : (</p>
+        <p class="smo">如果你有感情問題想找人說說或是破房了，可以<a class="contact" href="mailto:hi@my-girlfriend.info">告訴我們</a>。</p>
     </div>
+    <script>
+        if (window.location.search == "") {
+            let name = ""
+            while (name == "" || name == null) {
+                name = prompt("你叫甚麼名子阿?", "");
+                if (name == "" || name == null) {
+                    alert("你要確定你沒有名子欸...")
+                }
+            }
+            alert(`你說你叫 ${name} 阿！`);
+            alert(`讓我來幫你算算看你和誰最配...`);
+            alert(`我知道了！`);
+            window.location.search = `?name=${name}`
+        }
+    </script>
 </body>
+
 </html>
