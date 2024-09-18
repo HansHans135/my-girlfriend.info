@@ -74,7 +74,7 @@
 </head>
 
 <body>
-    <div class="container">
+    <div class="container" style="display: none;">
         <h1>404</h1>
         <p>很抱歉，您想要的女朋友不存在 : (</p>
         <p class="smo">如果你有感情問題想找人說說或是破房了，可以<a class="contact" href="mailto:hi@my-girlfriend.info">告訴我們</a>。</p>
@@ -92,6 +92,9 @@
             alert(`讓我來幫你算算看你和誰最配...`);
             alert(`我知道了！`);
             window.location.search = `?name=${name}`
+        } else {
+            page = document.querySelector("#container");
+            page.style.display = "block";
         }
     </script>
 </body>
