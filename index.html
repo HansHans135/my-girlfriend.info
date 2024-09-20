@@ -82,10 +82,10 @@
     <script>
         if (window.location.search == "") {
             let name = ""
-            while (name == "" || name == null) {
-                name = prompt("你叫甚麼名子阿?", "");
-                if (name == "" || name == null) {
-                    alert("你要確定你沒有名子欸...")
+            while (name == "" || name == null || name == "%20") {
+                name = prompt("你叫什麼名字阿?", "");
+                if (name == "" || name == null || name == "%20") {
+                    alert("你要確定你沒有名字欸...")
                 }
             }
             alert(`你說你叫 ${name} 阿！`);
