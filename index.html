@@ -78,14 +78,22 @@
     <div class="container" style="display: none;">
         <h1 id="code">404</h1>
         <p id="message">很抱歉，您想要的女朋友不存在 : (</p>
-        <p class="smo">如果你有感情問題想找人說說或是破房了，可以<a class="contact" href="mailto:hi@my-girlfriend.info">告訴我們</a>。</p>
+        <p class="smo">如果你有感情問題想找人說說或是破防了，可以<a class="contact" href="mailto:hi@my-girlfriend.info">告訴我們</a>。</p>
     </div>
     <script>
         function getRandomHttpCode() {
             const codes = [
+                { code: 304, message: "前任會更好。" },
                 { code: 429, message: "你可能才剛分手，請稍後再試。" },
                 { code: 404, message: "很抱歉，您想要的女友不存在。" },
+                { code: 402, message: "先給錢。" },
                 { code: 403, message: "你長太醜，沒有權限找女友。" },
+                { code: 410, message: "沒希望了。" },
+                { code: 412, message: "你達不到找女朋友的要求。" },
+                { code: 413, message: "你要求太多了。" },
+                { code: 502, message: "女朋友家門壞掉了，你進不去。" },
+                { code: 503, message: "女朋友停止服務。" },
+                { code: 507, message: "女朋友家滿了。" },
                 { code: 500, message: "可能你的未來女友崩潰了，請稍後再試。" }
             ];
             return codes[Math.floor(Math.random() * codes.length)];
