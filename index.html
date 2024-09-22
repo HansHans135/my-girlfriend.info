@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>看看你未來的女朋友?</title>
+    
     <script defer src="https://view.hans0805.me/script.js"
         data-website-id="741cd5db-f457-49c7-9a73-d2bf6bbf19fa"></script>
     <style>
@@ -75,11 +76,21 @@
 
 <body>
     <div class="container" style="display: none;">
-        <h1>404</h1>
-        <p>很抱歉，您想要的女朋友不存在 : (</p>
+        <h1 id="code">404</h1>
+        <p id="message">很抱歉，您想要的女朋友不存在 : (</p>
         <p class="smo">如果你有感情問題想找人說說或是破房了，可以<a class="contact" href="mailto:hi@my-girlfriend.info">告訴我們</a>。</p>
     </div>
     <script>
+        function getRandomHttpCode() {
+            const codes = [
+                { code: 429, message: "你可能才剛分手，請稍後再試。" },
+                { code: 404, message: "很抱歉，您想要的女友不存在。" },
+                { code: 403, message: "你長太醜，沒有權限找女友。" },
+                { code: 500, message: "可能你的未來女友崩潰了，請稍後再試。" }
+            ];
+            return codes[Math.floor(Math.random() * codes.length)];
+        }
+
         if (window.location.search == "") {
             let name = ""
             while (name == "" || name == null || name == "%20") {
@@ -93,6 +104,9 @@
             alert(`我知道了！`);
             window.location.search = `?name=${name}`
         } else {
+            const randomHttp = getRandomHttpCode();
+            document.getElementById("code").innerText = randomHttp.code;
+            document.getElementById("message").innerText = randomHttp.message;
             page = document.querySelector(".container");
             page.style.display = "block";
         }
